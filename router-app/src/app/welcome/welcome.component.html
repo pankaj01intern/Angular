@@ -1,0 +1,68 @@
+
+<div class="container">
+    <h1>Welcome to the Angular Learning page</h1>
+     <div class="row">
+       <div *ngFor="let image of Images">
+    
+          <div class="col-md-12 col-sm-12 col-8">
+    
+              <div class="card mt-5">
+                <div class="card-header">{{image.id}}</div>
+                <div class="card-body">
+                  <img [src]=image.path height="50" width="50">
+                </div>
+      
+              </div>
+            </div>
+       </div>
+    
+     </div>
+    
+     <br><br><br>
+    <div>
+        <hr/>
+      <h2>
+    {{'Calculation is: '}}</h2><hr/>
+    </div>
+    <hr/>
+    <br>
+    <div>
+      <button >{{img ? 'Hide ': 'Show '}}Image</button>
+      <div class="A" *ngIf="img">
+          <br>
+      <img src="../assets/pic3.png" height="100" width="100">
+      </div>
+    </div>
+    
+    <div>
+     <br><br>
+      Filter
+      <input type="text" [(ngModel)]="filter" style="margin-left:30px">
+    </div>
+    <div><br>
+      <h3>Filtered By: {{filter}}</h3>
+    </div>
+    
+    <div class="row">
+        <div *ngFor="let product of filteredProducts">
+     
+           <div class="col-md-12 col-sm-12 col-8">
+     
+               <div class="card mt-5">
+                 <div class="card-body">
+                   <h6>{{product.name}}</h6>
+                 </div>
+       
+               </div>
+             </div>
+        </div>
+     
+      </div>
+    
+      <br>
+    
+    <div style="width:40px">
+    <span  class="fa fa-star"></span>
+    </div>
+    <hr/>
+    </div>

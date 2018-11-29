@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">ProductForm</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-8 col-sm-6 col-md-6">
+        <form [formGroup]="productForm2" (submit)="handleForm($event)">
+          <div class="form-group">
+            <label>Id</label>
+            <input type="text" class="form-control" formControlName="prodId" >
+          </div>
+          <button class="btn btn-primary" >Delete </button>
+          <ng-container *ngIf="products2 != null; then Found; else notFound">
+          </ng-container>
+         <div class="A" style="color: red"> {{str}}</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #Found>
+  {{str2}}
+</ng-template>
+
+<ng-template #notFound>
+  {{str3}}
+</ng-template>
+

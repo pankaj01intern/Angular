@@ -1,0 +1,56 @@
+<div class="card">
+  <div class="card-header">ProductForm</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-8 col-sm-6 col-md-6">
+        <form [formGroup]="productForm2" (submit)="handleForm($event)">
+          <div class="form-group">
+            <label>Id</label>
+            <input type="text" class="form-control" formControlName="prodId" >
+          </div>
+          <button class="btn btn-primary" >search</button>
+<ng-container *ngIf="products2 != null; then Found; else notFound">
+</ng-container>
+{{str3}}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #Found>
+    <div class="card" style="margin-top: 20px">
+        <div class="card-header">ProductForm</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-8 col-sm-6 col-md-6">
+              <form [formGroup]="productForm3" (submit)="handleForm2($event)">
+                <div class="form-group">
+                  <label>Id</label>
+                  <input type="text" class="form-control"  value="{{products2.prodId}}">
+                </div>
+                <div class="form-group">
+                  <label>Name</label>
+                  <input class="form-control" value="{{products2.prodName}}">
+                </div>
+                <div class="form-group">
+                  <label>Price</label>
+                  <input class="form-control" value="{{products2.price}}" >
+                </div>
+                <button class="btn btn-primary">update</button>
+                {{str2}}
+              </form>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    
+    
+</ng-template>
+  <ng-template #notFound>
+    <div class="notfound" style="color: red">
+{{str}}
+    </div>
+  </ng-template>
